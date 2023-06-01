@@ -1,0 +1,22 @@
+<StickyElement::Trigger @offset={{this.top}} @enter={{action 'parentTopEntered'}} @exit={{action 'parentTopExited'}} @registerElement={{action 'registerTopTrigger'}} />
+
+<div class="
+  {{this.containerClassName}}
+  {{if this.isSticky this.containerStickyClassName}}
+  {{if this.isStickyTop this.containerStickyTopClassName}}
+  {{if this.isStickyBottom this.containerStickyBottomClassName}}"
+  style={{this.containerStyle}}>
+
+  {{yield
+    (hash
+      isSticky=this.isSticky
+      isStickyTop=this.isStickyTop
+      isStickyBottom=this.isStickyBottom
+    )
+  }}
+
+</div>
+
+{{#if this.stickToBottom}}
+  <StickyElement::Trigger @type="bottom" @offset={{this.offsetBottom}} @enter={{action 'parentBottomEntered'}} @exit={{action 'parentBottomExited'}} @registerElement={{action 'registerBottomTrigger'}} />
+{{/if}}
