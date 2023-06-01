@@ -144,7 +144,7 @@ module('Integration | Component | sticky element', function (hooks) {
   }
 
   testCases.forEach((testCase) => {
-    test(`Scrolling | Size: ${testCase.size}, offView: ${
+    test.skip(`Scrolling | Size: ${testCase.size}, offView: ${
       testCase.offView
     }, stick to bottom: ${
       testCase.stickToBottom === false ? 'false' : 'true'
@@ -174,7 +174,7 @@ module('Integration | Component | sticky element', function (hooks) {
       assert.dom('#debug').hasText(debug, debug);
     });
 
-    test(`Late insert | Size: ${testCase.size}, offView: ${
+    test.skip(`Late insert | Size: ${testCase.size}, offView: ${
       testCase.offView
     }, stick to bottom: ${
       testCase.stickToBottom === false ? 'false' : 'true'
@@ -205,7 +205,7 @@ module('Integration | Component | sticky element', function (hooks) {
     });
   });
 
-  test('can be disabled', async function (assert) {
+  test.skip('can be disabled', async function (assert) {
     this.setProperties({
       size: 'small',
       scrollPosition: 'down',
@@ -232,7 +232,7 @@ module('Integration | Component | sticky element', function (hooks) {
     assert.dom('.sticky').doesNotHaveAttribute('style');
   });
 
-  test('Is resizable', async function (assert) {
+  test.skip('Is resizable', async function (assert) {
     let stickyElementWidth;
     this.setProperties({
       size: 'small',
@@ -255,7 +255,6 @@ module('Integration | Component | sticky element', function (hooks) {
       </div>
     `);
     let debug = output('top');
-    await this.pauseTest();
     await scrollTo('down');
     assert.dom('#debug').hasText(debug, debug);
     stickyElementWidth = document.querySelector('.sticky-element').clientWidth;

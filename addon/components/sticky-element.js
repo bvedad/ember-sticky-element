@@ -1,12 +1,9 @@
-// import Ember from 'ember';
 import { or, notEmpty } from '@ember/object/computed';
-import { htmlSafe } from '@ember/template';
+import { htmlSafe } from '@ember/string';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { later, cancel, debounce } from '@ember/runloop';
 import layout from '../templates/components/sticky-element';
-
-// const { testing } = Ember;
 
 function elementPosition(element, offseTop, offsetBottom) {
   let top = element.getBoundingClientRect().top;
@@ -243,9 +240,7 @@ export default Component.extend({
   },
 
   initPollTask() {
-    // if (!testing) {
-    //   this._pollTimer = later(this, this._pollTask, 500);
-    // }
+    this._pollTimer = later(this, this._pollTask, 500);
   },
 
   removePollTask() {
