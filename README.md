@@ -1,6 +1,6 @@
 # ember-sticky-element
 
-[Short description of the addon.]
+This logic of the codebase is cloned from https://github.com/kaliber5/ember-sticky-element and project is created from scratch in order to have support for Ember v4.
 
 
 ## Compatibility
