@@ -1,5 +1,5 @@
 import { or, notEmpty } from '@ember/object/computed';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { later, cancel, debounce } from '@ember/runloop';
