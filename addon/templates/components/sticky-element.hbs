@@ -1,4 +1,4 @@
-<StickyElement::Trigger @offset={{this.top}} @enter={{action 'parentTopEntered'}} @exit={{action 'parentTopExited'}} @registerElement={{action 'registerTopTrigger'}} />
+<StickyElement::Trigger @offset={{this.top}} @enter={{this.parentTopEntered}} @exit={{this.parentTopExited}} @registerElement={{this.registerTopTrigger}} />
 
 <div class="
   {{this.containerClassName}}
@@ -18,5 +18,5 @@
 </div>
 
 {{#if this.stickToBottom}}
-  <StickyElement::Trigger @type="bottom" @offset={{this.offsetBottom}} @enter={{action 'parentBottomEntered'}} @exit={{action 'parentBottomExited'}} @registerElement={{action 'registerBottomTrigger'}} />
+  <StickyElement::Trigger @type="bottom" @offset={{this.offsetBottom}} @enter={{this.parentBottomEntered}} @exit={{this.parentBottomExited}} @registerElement={{this.registerBottomTrigger}} />
 {{/if}}
